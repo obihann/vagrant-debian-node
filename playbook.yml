@@ -9,6 +9,7 @@
         - python-software-properties
         - apt-transport-https
         - libfontconfig
+        - maven
 
     - name: Check if your distribution is supported
       uri: url=https://deb.nodesource.com/node/dists/{{ansible_distribution_release}}/Release
@@ -27,5 +28,8 @@
       with_items:
         - nodejs
 
-    - name: Install package.json
-      npm: path=/vagrant
+    - name: Install global packages
+      npm: name={{item}}t global=true
+      with_items:
+          - karma
+          - gulp
