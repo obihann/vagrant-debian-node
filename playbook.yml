@@ -34,3 +34,4 @@
       with_items:
           - karma
           - gulp
+          - sympm
