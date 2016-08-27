@@ -29,7 +29,8 @@
         - nodejs
 
     - name: Install global packages
-      npm: name={{item}}t global=true
+      become: true
+      npm: name={{item}} global=true
       with_items:
           - karma
           - gulp
